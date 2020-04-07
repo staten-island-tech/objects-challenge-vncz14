@@ -48,7 +48,7 @@ const student = Sandra; // this is not a copy, what we're saying is "student" is
 
 
 // Challenges
-const presidents = [
+/* const presidents = [
     {name: "Donald Trump", terms: 1, party: "R"},
     {name: "Barack Obama", terms: 2, party: "D"},
     {name: "George W. Bush", terms: 2, party: "R"},
@@ -83,4 +83,73 @@ const democratTwoTerms = presidents.filter(function(el){
     return el.party === "D" && el.terms === 2;
   }
 );
-console.log(democratTwoTerms);
+console.log(democratTwoTerms); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+// The DOM (Document Object Model)
+// Basically, changing stuff in HTML with Javascript
+
+
+
+/* const headerClass = document.querySelector(".header"); //selects the first element with this condition
+const listItemClass = document.querySelectorAll(".list-item"); //selects ALL elements with this condition
+//returns a "nodelist," it is NOT an array
+const listItemArr = Array.from(listItemClass); //but we can convert it to an array
+
+headerClass.textContent = "test"; */
+
+
+
+/* const headerClass = document.querySelector(".header");
+const buttonClass = document.querySelector(".button");
+buttonClass.addEventListener("click", function(){ 
+    headerClass.classList.toggle("decoration");
+}); */
+
+
+
+/* const background = document.querySelector(".background");
+const button = document.querySelector(".button");
+const header = document.querySelector(".header");
+
+button.addEventListener("click", function(){
+    if(background.style.backgroundColor !== "rgb(255, 0, 0)"){
+        background.style.backgroundColor = "rgb(255, 0, 0)";
+        header.textContent = "Red";
+    } else{
+        background.style.backgroundColor = "rgb(0, 0, 255)";
+        header.textContent = "Blue";
+    }
+}) */
+
+
+
+
+// Challenge: 
+//use const = R, const = G, const = B to create a button wwith random background color. 
+// use math.random and math.floor
+
+const background = document.querySelector(".background");
+const button = document.querySelector(".button");
+
+function randomInt(max){
+    return Math.floor(Math.random() * Math.floor(max));
+}   
+
+button.addEventListener("click", function(){ 
+    const r = randomInt(256);
+    const g = randomInt(256);
+    const b = randomInt(256);
+    background.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+});
